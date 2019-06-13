@@ -1,0 +1,27 @@
+<div class="all">
+    <div class="spacer"></div>
+    <h3>Log in to start using Timtom taxi</h3>
+    <div class="fm">
+      <div class="fm-in">
+          <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+              <a routerLink="" routerLinkActive="active"><br><br><label class="fm-lb">Email</label></a>
+              <input type="email" class="form-control fm-imp" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Enter Email" required email>
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback" style="color:red;">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">Email must be a valid email address</div>
+              </div>
+              <label class="fm-lb">Password</label>
+              <input type="password" class="form-control fm-imp" type="password" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" placeholder="Enter Password">
+              <div *ngIf="f.submitted && password.invalid" class="invalid-feedback" style="color:red;">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+              </div>
+              <br><br>
+              <input class="reg" type="submit" id="login" value="Login">
+            </form>
+            <div *ngIf="error !='' " style="color:red">{{error}}</div> 
+            <div *ngIf="reset == true " class="pop"><p> forgot your password? <a routerLink="/reset">Reset now</a></p></div>
+            <p> don't yet have an account? <a routerLink="/register">Register</a></p>
+      </div>
+    </div>
+  </div>

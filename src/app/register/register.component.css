@@ -1,0 +1,248 @@
+/*
+.all{
+    width:100%;
+    min-height: 80vh;
+    background-image: url(./../../assets/images/bg-v.jpg);
+    padding:0 0 10vh 0;
+    background-size: cover;
+}
+.all h2{
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.74);
+}
+.spacer{
+    height:120px;
+}
+.fm{
+    width:92%;
+    max-width: 450px;
+    margin:10vh auto 0;
+    background-color: rgba(189, 216, 255, 0.2);
+    border: 5px solid #f1f1f1;
+    padding:4vh;
+    border-radius: 15px;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.7);
+    animation: inswap 1s ease 1;
+}
+@keyframes inswap {
+    0%{transform: scale(-0.5, 0.4) translateY(20vh)}
+    100%{transform: scale(1) translateY(0vh)}
+}
+.fm-in{
+    width:90%;
+    margin:0 auto 10px;
+}
+.fm-in p{
+    text-align: center;
+    color:#ffffff;
+    padding: 15px 0 0;
+}
+.fm-in p a{
+    color:#a7d4ff;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.fm-in p a:hover{
+    color:#0060df;
+    text-decoration: none;
+    transform: scale(1.1)
+}
+.fm-imp{
+    width:100%;
+    padding:15px;
+    margin:-5px 0 10px;
+    border-radius: 30px;
+    border:3px solid rgba(0, 0, 0, 0.0);
+    transition: 0.3s ease;
+    box-shadow: 0 3px 7px 1px rgba(0, 0, 0, 0.2)
+}
+.fm-imp:hover{
+    box-shadow: 0 3px 7px 1px rgba(0, 0, 0, 0.9);
+    transform: translateY(-3px) scale(1.02);
+}
+.fm-imp:focus{
+    outline:none;
+    border:3px solid #0090f0;
+}
+.fm-imp:active::placeholder{
+    border-bottom: 1px solid #00388d;
+}
+.fm-lb{
+    font-size: 11px;
+    padding-left: 20px;
+    color:#ffffff;
+}
+@keyframes shrink {
+    0%{transform: scale(1)}
+    100%{transform: scale(0.4)}
+}
+.reg{
+    width:100%;
+    border-radius: 20px;
+    padding:7px;
+    color:#ffffff;
+    background-color: rgb(3, 84, 190);
+    border:none;
+    transition: 0.4s ease;
+}
+.reg:hover{
+    background-color: black;
+    transform:translateY(-4px);
+}
+
+
+*/
+
+
+
+.all{
+    width:100%;
+    min-height: 80vh;
+    padding: 10vh 0;
+    background-image: url(../../assets/images/tim-bg.jpg);
+    background-repeat: repeat;
+}
+.all h2{
+    text-align: center;
+    color: #001330;
+}
+.all h3{
+    text-align: center;
+    color: #033074;
+}
+.spacer{
+    height:120px;
+}
+.fm{
+    width:92%;
+    max-width: 450px;
+    margin:10vh auto 0;
+    background-color: rgba(53, 69, 163, 0.4);
+    border: 5px solid #f1f1f1;
+    padding:4vh;
+    border-radius: 15px;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.5);
+    animation: inswap 1s ease 1;
+}
+@keyframes inswap {
+    0%{transform: scale(-0.5, 0.4) translateY(20vh)}
+    100%{transform: scale(1) translateY(0vh)}
+}
+.fm-in{
+    width:90%;
+    margin:0 auto 10px;
+}
+.fm-in p{
+    text-align: center;
+    color:#ffffff;
+    padding: 15px 0 0;
+}
+.fm-in p a{
+    color:#a7d4ff;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.fm-in p a:hover{
+    color:#0060df;
+    text-decoration: none;
+    transform: scale(1.1)
+}
+.fm-imp{
+    width:100%;
+    padding:15px;
+    margin:-5px 0 10px;
+    border-radius: 30px;
+    border:2px solid rgba(0, 4, 53, 0.247);
+    transition: 0.3s ease;
+    box-shadow: 0 3px 7px 1px rgba(0, 0, 0, 0.2)
+}
+.fm-imp:hover{
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px) scale(1.02);
+}
+.fm-imp:focus{
+    outline:none;
+    border:2px solid #0090f0;
+}
+.fm-imp:active::placeholder{
+    border-bottom: 1px solid #00388d;
+}
+.fm-lb{
+    font-size: 11px;
+    padding-left: 20px;
+    color:#ffffff;
+}
+@keyframes shrink {
+    0%{transform: scale(1)}
+    100%{transform: scale(0.4)}
+}
+.reg{
+    width:100%;
+    border-radius: 20px;
+    padding:7px;
+    color:#ffffff;
+    background-color: rgb(3, 84, 190);
+    border:none;
+    transition: 0.4s ease;
+}
+.reg:hover{
+    background-color: black;
+    transform:translateY(-4px);
+}
+.pop>p{
+    color: #d5f0ff;
+    margin: 0 0 -2vh 0;
+}
+.pop>p>a{
+    color: #80e1ff;
+}
+.pop>p>a:hover{
+    color: #1fb1ca;
+}
+.logdiv{
+    width:50%;
+    max-width: 110px;
+    margin: 2vh auto 1vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

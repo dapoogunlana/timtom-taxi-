@@ -1,0 +1,74 @@
+<div class="grid-container">
+    <sidebar></sidebar>
+    <div class="loader" *ngIf="data =='' ">
+        <div class="spacer"></div>
+        <div class="im-container">
+            <div class="imager">
+                <img src="../../assets/images/loading.gif" width="100%" alt="">
+            </div>
+            <h3>Loading</h3>
+        </div>
+    </div>
+    <div class="sect" *ngIf="data !='' ">
+        <div class="spacer"></div>
+        <h2>Welcome {{ data.user.f_name }} !</h2>
+        <div class="contents row">
+            <div class="col-md-6 col-lg-4">
+                <div class="attribute" id="attribute1">
+                    <div class="cov" id="cov1">
+                        <h3>New Service</h3>
+                        <p>Book a ride or send <br> courier</p>
+                        <a routerLink="/choice"><div class="more">Proceed</div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="attribute" id="attribute2">
+                    <div class="cov" id="cov2">
+                        <h3>Trip Record</h3>
+                        <p>View record of past <br> and pending trips</p>
+                        <a routerLink="/trips"><div class="more">Proceed</div></a>
+                    </div>
+                </div>
+            </div><!--
+            <div class="col-md-6 col-lg-4">
+                <div class="attribute" id="attribute3">
+                    <div class="cov" id="cov3">
+                        <h3>New Service</h3>
+                        <p>Book a ride or send courier</p>
+                        <a routerLink="/choice"><div class="more">Proceed</div></a>
+                    </div>
+                </div>
+            </div>-->
+            <div class="col-md-6 col-lg-4">
+                <div class="attribute" id="attribute4">
+                    <div class="cov" id="cov4">
+                        <h3>Settings</h3>
+                        <p>Coustomize your <br> personal profile</p>
+                        <a routerLink="/settings"><div class="more">Proceed</div></a>
+                    </div>
+                </div>
+            </div><!--
+            <div class="col-md-6 col-lg-4">
+                <div class="attribute">
+                    <h3>ksbifbduo</h3>
+                    <p>Doginisoro skjbjfnngvnanb vkjdsbjbd jfsdjvb</p>
+                    <a routerLink=""><div class="more">Proceed</div></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="attribute">
+                    <h3>ksbifbduo</h3>
+                    <p>Doginisoro skjbjfnngvnanb vkjdsbjbd jfsdjvb</p>
+                    <a routerLink=""><div class="more">Proceed</div></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="attribute"></div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                    <div class="attribute"></div>
+            </div>-->
+        </div>
+    </div>
+</div>

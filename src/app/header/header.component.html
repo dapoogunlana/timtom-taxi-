@@ -1,0 +1,63 @@
+<div>
+    <div class="heady" id="heady">
+        <div class="logo"><a routerLink=""><img width="150" id="logo" alt="timtom" [src]="source"></a></div>
+        <mark Eventcatcher style="opacity:0; position:absolute;"></mark>
+        <div class="niv">
+          <div class="hamburger" (click)="menuResponse()">
+            <div id="hamburger-menu1"></div>
+            <div id="hamburger-menu2"></div>
+            <div id="hamburger-menu3"></div>
+          </div>
+          <!-- <ul id="menuItems" (click)="vstate()"> -->
+          <ul id="menuItems" (click)="vstate()" >  
+            <!-- <div *ngIf="navSwitch; then trueblock; else falseblock"></div> -->
+            <!-- <ng-template #trueblock>
+          <ul id="menuItems" (click)="vstate()">
+            <div *ngIf="navSwitch; then trueblock; else falseblock"></div>
+            <ng-template #falseblock>
+              <li><a routerLink="" routerLinkActive="active">Home</a></li>
+              <li><a routerLink="about" routerLinkActive="active">About</a></li>
+              <li><a routerLink="login" routerLinkActive="active">Log in</a></li>
+              <li><a routerLink="register" routerLinkActive="active">Register</a></li>
+              <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
+            </ng-template>
+            <ng-template #trueblock>
+                <li><a routerLink="" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="about" routerLinkActive="active">About</a></li>
+                <li><a routerLink="transport" routerLinkActive="active">Get Started</a></li>
+                <li><a routerLink="trips" routerLinkActive="active">Trips</a></li>
+                <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
+              </ng-template> -->
+              <!-- <div *ngIf="token !== null " >
+                <li><a routerLink="" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="about" routerLinkActive="active">About</a></li>
+                <li><a routerLink="trips" routerLinkActive="active">Trips</a></li>
+                <li><a routerLink="dashboard" routerLinkActive="active">Dashboard</a></li>
+                <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
+              </div> 
+              <div *ngIf="token == null " >
+                <li><a routerLink="" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="about" routerLinkActive="active">About</a></li>
+                <li><a routerLink="login" routerLinkActive="active">Log in</a></li>
+                <li><a routerLink="register" routerLinkActive="active">Register</a></li> 
+              </div> -->
+              <div *ngIf="token;else other_content">
+                  <li><a routerLink="" (activate)="onActivate($event)">Home</a></li>
+                <li><a routerLink="dashboard" routerLinkActive="active">Dashboard</a></li>
+                <li><a routerLink="about" routerLinkActive="active">About</a></li>
+                <!--<li><a routerLink="trips" routerLinkActive="active">Trips</a></li>
+                <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>-->
+                <li ><a href="" routerLinkActive="active" (click)="getLoggedOut()">Logout</a></li>
+              </div>
+
+            <ng-template #other_content>
+              <li><a routerLink="" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="login" routerLinkActive="active">Log in</a></li>
+                <li><a routerLink="register" routerLinkActive="active">Register</a></li>
+                <li><a routerLink="about" routerLinkActive="active">About</a></li>
+                <!--<li><a routerLink="contact" routerLinkActive="active">Contact</a></li>-->
+            </ng-template>
+          </ul>
+        </div>
+      </div>
+</div>

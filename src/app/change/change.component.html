@@ -1,0 +1,44 @@
+<div class="grid-container">
+    <sidebar></sidebar>
+    <!--<div class="sect" *ngIf="data !='' ">-->
+      
+  <div class="all">
+      <div class="spacer"></div>
+      <h3>Fill in your old and new passwords</h3>
+      <div class="fm">
+        <div class="fm-in">
+          <form name="form" (ngSubmit)="f.form.valid && reset()" #f="ngForm">
+            <label class="fm-lb">Old Password</label>
+            <input type="old_password" class="form-control fm-imp" type="old_password" name="old_password" [(ngModel)]="model.old_password" #old_password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && old_password.invalid }" required minlength="6" placeholder="Enter old Password">
+            <div *ngIf="f.submitted && old_password.invalid" class="invalid-feedback" style="color:red;">
+                <div *ngIf="old_password.errors.required">Old Password is required</div>
+                <div *ngIf="old_password.errors.minlength">Old Password must be at least 6 characters</div>
+            </div>
+            <label class="fm-lb">New Password</label>
+            <input type="new_password" class="form-control fm-imp" type="new_password" name="new_password" [(ngModel)]="model.new_password" #new_password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && new_password.invalid }" required minlength="6" placeholder="Enter new Password">
+            <div *ngIf="f.submitted && new_password.invalid" class="invalid-feedback" style="color:red;">
+                <div *ngIf="new_password.errors.required">New Password is required</div>
+                <div *ngIf="new_password.errors.minlength">New Password must be at least 6 characters</div>
+            </div>
+            <input class="reg" type="submit" id="reset" [value]="reseter">
+          </form>
+          <div *ngIf="failed"><p style="color:red">Invalid old or new password</p></div>
+          <div><p style="color:red"> {{falsify}} </p></div> 
+          <div *ngIf="passed" class="pop"><p> Your password has been changed successfully <a routerLink="/dashboard">go&nbsp;back</a></p></div>
+          <!-- <div *ngIf="failed == true" class="pop"><p> Network error, please try again</p></div>-->
+      </div>
+    </div>
+  </div>
+  <a routerLink="/settings"><div class="popup" id="popup"><i class="fa fa-reply-all"></i></div></a>
+  <div *ngIf="final" class="fully">
+      <div class="c-message">
+        <div class="c-image">
+          <img src="../../assets/images/success-star.jpg" width="100%" alt="">
+        </div>
+        <p>Your Order was Successful</p>
+        <div class="retrn">
+            <div class="btn btn-primary" (click)= "reroute()">Go to Dashboard</div>
+        </div>
+      </div>
+    </div>
+</div>

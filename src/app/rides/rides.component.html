@@ -1,0 +1,151 @@
+<div class="grid-container">
+    <sidebar></sidebar>
+        <div class="all">
+            <div class="spacer"></div>
+            <div class="full">
+              <br>
+              <div *ngIf="user !={}">
+                  <h3 class="tpp">Hi {{user.f_name}}, what would you like to do? </h3>
+              </div>
+              
+              <div class="capsule">
+                <div class="row">
+                    <div class="col-sm-6">
+                      <div class="t-options" id="ch1"(click)="choose1()">Timtom Taxi </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="t-options" id="ch2" (click)="choose2()">Luxury Ride</div>
+                    </div>
+                </div>
+                    <div class="uber" id="uber">
+                      <div class="uber-in">
+                        <P>To enjoy this service please download our mobile app from google playstore, here is a quick link</P>
+                        <div class="imdiv">
+                            <img class="imgdiv" src="../../assets/images/play-store.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="luxury" id="luxury">
+                      <br>
+                      <p>Fill in your location and preferences to iniciate your luxury ride</p>
+                      <p>Please be informed that the cost for our luxury rides is N10,000 per hour of use</p>
+                      <!--Luxury Start/ still under construction-->
+                                <form name="form" (ngSubmit)="f.form.valid && payWithPaystack()" #f="ngForm">
+                        <div class="fm">
+                            <div class="fm-in">
+                                    <br><br><!--
+                                    
+                                    <label class="fm-lb">Email Address</label>
+                                    <input type="text" class="form-control fm-imp" type="text" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email placeholder="Enter Email Address">
+                                    <div *ngIf="f.submitted && email.invalid" class="invalid-feedback" style="color:red;">
+                                        <div *ngIf="email.errors.required">Email is required</div>
+                                        <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                                    </div>
+                                    <label class="fm-lb">Phone Number</label>
+                                    <input type="text" class="form-control fm-imp" type="number" name="phone_no" [(ngModel)]="model.phone_no" #phone_no="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone_no.invalid }" required phone_no placeholder="Enter Phone number">
+                                    <div *ngIf="f.submitted && phone_no.invalid" class="invalid-feedback" style="color:red;">
+                                        <div *ngIf="phone_no.errors.required">Phone number is required</div>
+                                        <div *ngIf="phone_no.errors.phone_no">Phone number must be a valid type</div>
+                                    </div>-->
+                                    <label class="fm-lb">Location</label>
+                                    <input type="text" class="form-control fm-imp" type="text" name="location" [(ngModel)]="model.location" #location="ngModel" [ngClass]="{ 'is-invalid': f.submitted && location.invalid }" required location placeholder="Enter Pick up location">
+                                    <div *ngIf="f.submitted && location.invalid" class="invalid-feedback" style="color:red;">
+                                        <div *ngIf="location.errors.required">Pick up location is required</div>
+                                        <div *ngIf="location.errors.location">Pick up location must be a valid type</div>
+                                    </div>
+                                    <label class="fm-lb">Purpose</label>
+                                    <input type="text" class="form-control fm-imp" type="text" name="purpose" [(ngModel)]="model.purpose" #purpose="ngModel" [ngClass]="{ 'is-invalid': f.submitted && purpose.invalid }" required purpose placeholder="Enter purpose of trip">
+                                    <div *ngIf="f.submitted && purpose.invalid" class="invalid-feedback" style="color:red;">
+                                        <div *ngIf="purpose.errors.required">Purpose of trip is required</div>
+                                        <div *ngIf="purpose.errors.purpose">Purpose of trip must be a valid type</div>
+                                    </div>
+                                    <label class="fm-lb">Intended date of use</label>
+                                    <input type="date" class="form-control fm-imp unstyled" [max]="Limit" [min]="today" name="date_of_use" [(ngModel)]="model.date_of_use" #date_of_use="ngModel" [ngClass]="{ 'is-invalid': f.submitted && date_of_use.invalid }" required date_of_use placeholder="Enter intended date of use">
+                                    <div *ngIf="f.submitted && date_of_use.invalid" class="invalid-feedback" style="color:red;">
+                                        <div *ngIf="date_of_use.errors.required">Intended date of use is required</div>
+                                        <div *ngIf="date_of_use.errors.date_of_use">Intended date of use must be a valid type</div>
+                                    </div>
+                                    <label class="fm-lb">Duration</label>
+                                    <input type="number" class="form-control fm-imp" type="number" name="duration" [(ngModel)]="model.duration" #duration="ngModel" [ngClass]="{ 'is-invalid': f.submitted && duration.invalid }" required duration placeholder="Enter Duration (in hours)">
+                                    <div *ngIf="f.submitted && duration.invalid" class="invalid-feedback" style="color:red;">
+                                        <div *ngIf="duration.errors.required">Duration is required</div>
+                                        <div *ngIf="duration.errors.duration">Duration must be a valid type</div>
+                                    </div>
+                                    
+                            </div>
+                          </div>
+                          <br><br>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="rides" id="ride1" (click)="assign('ferrari','ride1')">
+                                <img src="../../assets/images/ferrari.jpg" class="ride-im" width="100%" alt="">
+                                <div class="ride-text">Ferarari</div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="rides" id="ride2" (click)="assign('bugati','ride2')">
+                                <img src="../../assets/images/bugatti.jpg" class="ride-im" width="100%" alt="">
+                                <div class="ride-text">Bugati</div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="rides" id="ride3" (click)="assign('prado','ride3')">
+                                <img src="../../assets/images/prado.jpg" class="ride-im" width="100%" alt="">
+                                <div class="ride-text">Prado</div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="rides" id="ride4" (click)="assign('range-rover','ride4')">
+                                <img src="../../assets/images/range.jpg" class="ride-im" width="100%" alt="">
+                                <div class="ride-text">Range Rover</div>
+                              </div>
+                            </div>
+                          </div>
+                            <br><br>
+                            <p style="color:red; text-align:center;"> {{carTypeWarning}} </p>
+                            <input class="reg" type="submit" id="register" [value]="Order">
+                          </form>
+                          <br><br>
+                          <!--Luxury end-->
+                          <br><br><br>
+                    </div>
+              </div>
+            </div>
+            <a routerLink="/choice"><div class="popup" id="popup"><i class="fa fa-reply-all"></i></div></a>
+            <div *ngIf="final" class="fully">
+              <div class="c-message">
+                <div class="c-image">
+                  <img src="../../assets/images/success-star.jpg" width="100%" alt="">
+                </div>
+                <p>Your Order was Successful</p>
+                <div class="retrn">
+                    <div class="btn btn-primary" (click)= "reroute()">Go to Dashboard</div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="issue" class="fully">
+                <div class="c-message">
+                    <div class="c-image">
+                    <img src="../../assets/images/sorry.jpg" width="100%" alt="">
+                    </div>
+                    <p>Your payment could not be validated. Please contact our support team</p>
+                    <div class="retrn">
+                        <div class="btn btn-primary" (click)= "reroute()">Go to Dashboard</div>
+                        <br><br>
+                        <div class="btn btn-primary" (click)= "reroute2()">make complaint</div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="wrong" class="fully">
+                <div class="c-message">
+                    <div class="c-image">
+                    <img src="../../assets/images/sorry.jpg" width="100%" alt="">
+                    </div>
+                    <p>Your Payment Failed</p>
+                    <div class="retrn">
+                        <div class="btn btn-primary" (click)= "dismiss()">Dismiss</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="grid-container">
+    <sidebar></sidebar>
+    <div class="sect">
+        <div class="spacer"></div>
+        <div *ngIf="data != ''"><h2>Hi {{data.user.f_name}}, view your trips </h2></div>
+        <div class="capsule">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="t-options" id="rc1"(click)="rec1()">Curier Records </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="t-options" id="rc2" (click)="rec2()">Luxury Records</div>
+                </div>
+            </div>
+        </div>
+        <div class="sel" *ngIf="rec == ''">
+            <p>Please select the records you wish to view</p>
+        </div>
+        <div class="contents" *ngIf="rec == 'couriers'">
+            <div class="loader" *ngIf="courier ==''">
+                <div class="loader-img">
+                    <img src="../../assets/images/loading.gif" width="100%" alt="">
+                </div>
+                <p>Loading courier records</p>
+            </div>
+            <div *ngIf="courier !=''">
+                <div *ngIf="courier.data && couriers.length >= 1; then some; else none"></div>
+                <ng-template #some>
+                    <div *ngFor="let trip of couriers" class="trip-record row">
+                    <div class="col-sm-6 col-md-4">
+                        <p> Sent to: {{trip.contact_name}}</p>
+                        <p> Phone No: {{trip.contact_phone}}</p>
+                        <p> from {{trip.from_location}} to {{trip.to_location}}</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <p> Description: {{trip.description}}</p>
+                        <p> courier type: {{trip.courier_type}}</p>
+                        <p> Price: {{trip.price}}</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <p> Reference Number: {{trip.ref_no}}</p>
+                        <p> Status: {{trip.status}}</p>
+                    </div>
+                    </div>
+                </ng-template>
+                <ng-template #none>
+                    <h4>You have no courier records yet</h4>
+                </ng-template>
+            </div>
+        </div>
+        <div class="contents" *ngIf="rec == 'luxuries'">
+            <div class="loader" *ngIf="luxury == ''">
+                <div class="loader-img">
+                    <img src="../../assets/images/loading.gif" width="100%" alt="">
+                </div>
+                <p>Loading luxury records</p>
+            </div>
+            <div *ngIf="luxury !=''">
+                <div *ngIf="luxury.data && luxuries.length >= 1; then some; else none"></div>
+                <ng-template #some>
+                    <div *ngFor="let trip of luxuries" class="trip-record row">
+                    <div class="col-sm-6 col-md-4">
+                        <p> Date: {{trip.date_of_use}}</p>
+                        <p>  Start Location: {{trip.location}}</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <p> Purpose: {{trip.purpose}}</p>
+                        <p> Status: {{trip.status}}</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <p> Reference number: {{trip.ref_no}}</p>
+                    </div>
+                    </div>
+                </ng-template>
+                <ng-template #none>
+                    <h4>You have no Luxury records yet</h4>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

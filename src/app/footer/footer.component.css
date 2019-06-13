@@ -1,0 +1,202 @@
+.footer{
+    background-image: url(./../../assets/images/seamless.jpg);
+    background-repeat: repeat;
+    color:#ffffff;
+    border-top: 4px solid #000000;
+}
+.marg{
+    padding:20px;
+}
+.rule{
+    width:90%;
+    margin: auto;
+    background-color: rgb(136, 136, 136);
+}
+.footer-sect{
+    width:90%;
+    margin: auto;
+    color:#ffffff;
+    padding-top:5vh;
+}
+.footer-sect ul {
+    list-style-type: none;
+    margin:0 0 0 -40px;
+}
+
+.containers{
+    width:96%;
+    max-width: 1400px;
+    margin:auto;
+}
+.footer-sect li{
+    display:inline-block;
+}
+.footer-sect li:hover{
+}
+.footer-sect li a{
+    text-decoration: none;
+    color:#ffffff;
+    display:block;
+    padding:8px 1px;
+    width:40px;
+    text-align: center;
+    margin: 5px;
+    background-color: #3d3d3d;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+.footer-sect li:hover a{
+    text-decoration: none;
+    color:#000000;
+    background-color: #ffffff;
+}
+.footer-sect h3{
+    color:#ffffff;
+    font-size: 22px;
+    line-height: 2;
+}
+.footer-sect p{
+    color:#ffffff;
+    font-size: 15px;
+    margin:-2px 0;
+    transition: 0.5s;
+}
+.footer-sect p a{
+    text-decoration: none;
+    color:#ffffff;
+    line-height: 2;
+}
+.footer-sect p a:hover{
+    color:#cecdb6;
+}
+.fcc:hover{
+    transform: scale(1.2);
+}
+.footer-sect p:hover  .shifter{
+    transform: translate(-10px, 0) rotate(180deg) scale(1.3);
+}
+.footer-sect p:hover  i{
+    transform: scale(1.5);
+}
+.footer-sect>p>i{
+    transition:0.4s ease;
+}
+.shifter{
+    transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Nexalight';
+    src: url(./../../assets/fonts/NEXALIGHT.OTF) format("truetype");
+}
+
+h1,h2,h3,h4,h5,h6{
+	padding:0 0;
+	margin:0 0;
+	font-family: 'Nexalight' !important;
+	-webkit-font-family: 'Nexalight' !important;
+}
+.footer-section {
+	padding: 40px 0px 0px;
+}
+.social-icon {
+padding:30px 0;
+}
+.social-icon i{
+	width:40px;
+	height:40px;
+	display:inline-block;
+}
+.social-icon i:hover{
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.social-icon a i.icon1{
+	background-position:0px 0px;
+}
+.social-icon a i.icon1:hover{
+	background-position:0px -40px;
+}
+.social-icon a i.icon2{
+	background-position:-40px 0px;
+}
+.social-icon a i.icon2:hover{
+	background-position:-40px -40px;
+}
+.social-icon a i.icon3{
+	background-position:-80px 0px;
+}
+.social-icon a i.icon3:hover{
+	background-position:-80px -40px;
+}
+.social-icon i.icon4{
+	background-position:-120px 0px;
+}
+.social-icon a i.icon4:hover{
+	background-position:-120px -40px;
+}
+.social-icon i.icon5{
+	background-position:-160px 0px;
+}
+.social-icon a i.icon5:hover{
+	background-position:-160px -40px;
+}
+.social-icon i.icon6{
+	background-position:-200px 0px;
+}
+.social-icon a i.icon6:hover{
+	background-position:-200px -40px;
+}
+.social-icon i.icon7{
+	background-position:-240px 0px;
+}
+.social-icon a i.icon7:hover{
+	background-position:-240px -40px;
+}
+.social-icon i.icon8{
+	background-position:-280px 0px;
+}
+.social-icon a i.icon8:hover{
+	background-position:-280px -40px;
+}
+
+.footer-bottom {
+	
+	text-align: center;
+	padding: 20px 0;
+	background: #182029;
+	width:100%;
+}
+.footer-bottom p {
+	font-size: 14px;
+	color: #d5d6d7;
+	font-weight: 400;
+}
+.footer-bottom a {
+	font-size: 19px;
+	color: #f0c514;
+	font-weight: 400;
+	text-transform: capitalize;
+}
+.footer-bottom a:hover {
+	color: #d5d6d7;
+}
+.footer-bottom p a {
+	margin: 0 6px 0 6px;
+}

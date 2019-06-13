@@ -1,0 +1,49 @@
+<div class="footer marg">
+  <hr class="rule"> <br>
+  <div class="containers row">
+    <div class="col-md-4">
+      <div class="footer-sect">
+        <img width="110" height="width" src="./../../assets/images/logo2.png">
+        <br><br>
+        <p>Timtom taxe is here to offer you simple, efficient deliveries. For your parcel or other packages, we 
+          are all you ever need for an effortless and efficient delivery</p>
+        <br>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+      <div class="footer-sect">
+        <h4><span>Quick Links</span></h4>
+        <br>
+        <p class="fcc"><i class="fa fa-arrow-left shifter"></i><a routerLink=""> Home</a></p>
+        <p *ngIf="token" class="fcc"><i class="fa fa-arrow-left shifter"></i><a routerLink="/dashboard"> Dashboard</a></p>
+        <p *ngIf="token" class="fcc"><i class="fa fa-arrow-left shifter"></i><a routerLink="/trips"> Records</a></p>
+        <p *ngIf="!token" class="fcc"><i class="fa fa-arrow-left shifter"></i><a routerLink="/register"> Register</a></p>
+        <p *ngIf="!token" class="fcc"><i class="fa fa-arrow-left shifter"></i><a routerLink="/login"> Log in</a></p>
+        <p class="fcc"><i class="fa fa-arrow-left shifter"></i><a routerLink="/about"> About Us</a></p>
+        <br>
+      </div>
+    </div><!--
+    <div class="col-md-1"></div>-->
+    <div class="col-md-4">
+      <div class="footer-sect">
+          <h4>Contact us</h4>
+          <br>
+          <p><i class="fa fa-map-marker"></i> 9, Nnewi Street, Behind, Area 2 <br>&nbsp;&nbsp;&nbsp;shopping Mall, Garki-Area 2, Abuja</p><br>
+          <p><i class="fa fa-phone"></i> +234 701 100 2219</p>
+          <p><i class="fa fa-phone"></i> +234 803 860 8600</p><br>
+					<p><i class="fa fa-envelope"></i> info@timtomtaxi.com</p><br>
+					<ul>
+						<li><a><i class="fa fa-facebook"></i></a></li>
+            <li><a><i class="fa fa-instagram"></i></a></li>
+            <li><a><i class="fa fa-twitter"></i></a></li>
+          </ul>
+          <br>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-bottom">
+  <p> Timtom Taxi &copy;{{year}}  All rights Reserved | Brought to you by Timtom Taxi Ltd.<a href=""></a> </p>
+  <!--+2347036539719-->
+</div>

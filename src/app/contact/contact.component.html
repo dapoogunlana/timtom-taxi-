@@ -1,0 +1,62 @@
+<div class="all">
+    <div class="spacer-about"></div>
+    <h1>Contact us</h1>
+    <br>
+    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</h5>
+    <br>
+    <div class="row cnt">
+      <div class="col-md-6">
+        <div class="about-sect">
+          <h4>Lorem Ipsum</h4>
+          
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="about-sect" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+          <div class="mapc">
+            <div class="mapouter">
+              <div class="prud">
+                  <div class="prude">
+                    <h3>Want a meet up</h3>
+                    <p>Feel free to connect with us from our google map address, click the button below</p>
+                    <i class="fa fa-arrow-down"></i>
+                  </div>
+              </div>
+              <iframe class="mapbody" id="gmap_canvas" src="https://maps.google.com/maps?q=lagos&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+            <div class="mapbutton" id="mapbutton" (click)="showMap()">Show Map</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="bee">
+      <div class="cnt">
+        <h3>Send us a direct message</h3>
+        <div class="fill" id="fill" (click)="lapse()">Fill our form</div>
+      </div>
+      <div class="abt-conf" id="abt-conf">
+          <div class="cfm">
+              <div class="cfm-in">
+                  <form action="" method="POST">
+                      <br><br><label class="cfm-lb">Full Name</label>
+                      <input type="text" class="cfm-imp" [(ngModel)]="full_name" name="f_name" placeholder="Enter first Name">
+                      <label class="cfm-lb">Email Address</label>
+                      <input type="text" class="cfm-imp" [(ngModel)]="email" name="email" placeholder="Enter Email Address">
+                      <label class="cfm-lb">Phone Number</label>
+                      <input type="text" class="cfm-imp" [(ngModel)]="phone" name="phone" placeholder="Enter Phone number">
+                      <label class="cfm-lb">Message</label>
+                      <textarea type="text" class="cfm-impt" rows="8" [(ngModel)]="address" name="address" placeholder="Type your message here"></textarea>
+                      <br><br>
+                      <div class="fillr-cover">
+                          <button class="fillr" (click)="submit2()">Submit</button>
+                      </div>
+                    </form>
+              </div>
+            </div>
+        <br><br>
+      </div>
+    </div>
+</div>

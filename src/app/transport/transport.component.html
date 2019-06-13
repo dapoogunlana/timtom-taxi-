@@ -1,0 +1,127 @@
+<div class="grid-container">
+    <sidebar></sidebar>
+    <div class="sect" *ngIf="!allDiv">
+        <div class="spacer"></div>
+        <h2 *ngIf="data !=''">welcome {{data.user.f_name}}   </h2>
+        <br>
+        <p>please fill in the details of your courier</p>
+        <br>
+        <form name="form" (ngSubmit)="f.form.valid && calc()" #f="ngForm">
+            <div class="contents row">
+            <div class="col-md-6">
+                    <div class="pickup">
+                        <label class="fm-lb">From</label>
+                        <input type="text" class="form-control fm-imp" type="text" name="from_location" [(ngModel)]="model.from_location" #from_location="ngModel" [ngClass]="{ 'is-invalid': f.submitted && from_location.invalid }" required from_location placeholder="Enter Pick up location">
+                        <div *ngIf="f.submitted && from_location.invalid" class="invalid-feedback" style="color:red;">
+                            <div *ngIf="from_location.errors.required">Pick up location is required</div>
+                            <div *ngIf="from_location.errors.from_location">Pick up location must be a valid type</div>
+                        </div>
+                    </div>
+                    <div class="pickup">
+                        <label class="fm-lb">To</label>
+                        <input type="text" class="form-control fm-imp" type="text" name="to_location" [(ngModel)]="model.to_location" #to_location="ngModel" [ngClass]="{ 'is-invalid': f.submitted && to_location.invalid }" required to_location placeholder="Enter Drop off location">
+                        <div *ngIf="f.submitted && to_location.invalid" class="invalid-feedback" style="color:red;">
+                            <div *ngIf="to_location.errors.required">Drop off location is required</div>
+                            <div *ngIf="to_location.errors.to_location">Drop off location must be a valid type</div>
+                        </div>
+                    </div>
+                    <div class="pickup">
+                        <label class="fm-lb">Description</label>
+                        <input type="text" class="form-control fm-imp" type="text" name="description" [(ngModel)]="model.description" #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.invalid }" required description placeholder="Enter Description">
+                        <div *ngIf="f.submitted && description.invalid" class="invalid-feedback" style="color:red;">
+                            <div *ngIf="description.errors.required">Description is required</div>
+                            <div *ngIf="description.errors.description">Description must be a valid type</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="pickup">
+                        <label class="fm-lb">Receiver's name</label>
+                        <input type="text" class="form-control fm-imp" type="text" name="contact_name" [(ngModel)]="model.contact_name" #contact_name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contact_name.invalid }" required contact_name placeholder="Enter Receiver's name">
+                        <div *ngIf="f.submitted && contact_name.invalid" class="invalid-feedback" style="color:red;">
+                            <div *ngIf="contact_name.errors.required">Receiver's name is required</div>
+                            <div *ngIf="contact_name.errors.contact_name">Receiver's name must be a valid type</div>
+                        </div>
+                    </div>
+                    <div class="pickup">
+                        <label class="fm-lb">Receiver's number</label>
+                        <input type="number" class="form-control fm-imp" type="number" name="contact_phone" [(ngModel)]="model.contact_phone" #contact_phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contact_phone.invalid }" required contact_phone placeholder="Enter Receiver's number">
+                        <div *ngIf="f.submitted && contact_phone.invalid" class="invalid-feedback" style="color:red;">
+                            <div *ngIf="contact_phone.errors.required">Receiver's number is required</div>
+                            <div *ngIf="contact_phone.errors.contact_phone">Receiver's number must be a valid type</div>
+                        </div>
+                    </div>
+                    <div class="pickup">
+                        <label class="fm-lb">Courier type</label>
+                        <select name="courier_type" class="form-control fm-imp" [(ngModel)]="model.courier_type" placeholder="select courier type" form="form">
+                            <option value="parcel">Parcel</option>
+                            <option value="perishable">Perishable</option>
+                            <option value="heavy goods">Heavy goods</option>
+                        </select>
+                        <p style="color:red">{{typeWarning}}</p>
+                    </div>
+            </div>
+            <!--
+            <div class="col-md-6">
+                    <div class="mapc">
+                    <div class="mapouter">
+                        <iframe class="mapbody" id="gmap_canvas" src="https://maps.google.com/maps?q=lagos&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+                    </div>
+            </div>-->
+            </div>
+            <div class="pickbtn">
+                <button class="pickbutton" type="submit">Calculate</button>
+            </div>
+        </form>
+        <div class="payout row" *ngIf="pay">
+            <div class="col-md-6">
+                <p>Your Courier has been astimated at <strong>N{{model.price}}</strong></p>
+                <p>and would be delivered within {{estimate}} days of pick up</p>
+            </div>
+            <div class="col-md-6">
+                <p>Pay with your credit card to proceed</p>
+                <div class="pickbtn">
+                    <button class="paybutton" (click)="payWithPaystack()"> {{Order}} </button>
+                </div>
+                <p style="color:#c90000">{{responseErr}}</p>
+            </div>
+        </div>
+        <a routerLink="/choice"><div class="popup" id="popup"><i class="fa fa-reply-all"></i></div></a>
+        <div *ngIf="final" class="fully">
+          <div class="c-message">
+            <div class="c-image">
+              <img src="../../assets/images/success-star.jpg" width="100%" alt="">
+            </div>
+            <p>Your Order was Successful</p>
+            <div class="retrn">
+                <div class="btn btn-primary" (click)= "reroute()">Go to Dashboard</div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="issue" class="fully">
+            <div class="c-message">
+                <div class="c-image">
+                <img src="../../assets/images/sorry.jpg" width="100%" alt="">
+                </div>
+                <p>Your payment could not be validated. Please contact our support team</p>
+                <div class="retrn">
+                    <div class="btn btn-primary" (click)= "reroute()">Go to Dashboard</div>
+                    <br><br>
+                    <div class="btn btn-primary" (click)= "reroute2()">make complaint</div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="wrong" class="fully">
+            <div class="c-message">
+                <div class="c-image">
+                <img src="../../assets/images/sorry.jpg" width="100%" alt="">
+                </div>
+                <p>Your Payment Failed</p>
+                <div class="retrn">
+                    <div class="btn btn-primary" (click)= "dismiss()">Dismiss</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+.heady{
+    background-color: #2e5db4;
+    color:#ffffff;
+    padding:20px;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    box-shadow: 0px 3px 9px 1px rgba(0, 0, 0, 0.6);
+    transition: 0.4s ease;
+    overflow: hidden;
+}
+.logo{
+    position: absolute;
+    left:20px;
+    top:20px;
+}
+.niv li{
+    display:inline-block;
+    padding:10px 20px;
+    text-align: right;
+}
+.niv{
+    text-align: right;
+    font-family: inherit;
+}
+.niv ul li a{
+    text-decoration: none;
+    color:inherit;
+    transition: 0.3s ease;
+}
+.niv li a:hover{
+    transform: scale(1.1)
+}
+.active{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.hamburger{
+    width:50px;
+    margin: 0.2em;
+    float: right;
+    display:none;
+}/*
+.hamburger-menu, 
+.hamburger:before, 
+.hamburger:after{
+    height:5px;
+    border-radius: 3px;
+    margin:7px;
+    display:block;
+    content: '';
+    background-color: #ffffff;
+    transition: 0.4s ease;
+}
+.hamburger:hover:before{
+    transform: translateY(12px) rotate(-45deg)
+}
+.hamburger:hover:after{
+    transform: translateY(-12px) rotate(45deg)
+}
+.hamburger:hover .hamburger-menu{
+    transform: scale(0)
+}*/
+#hamburger-menu1, 
+#hamburger-menu2, 
+#hamburger-menu3{
+    height:5px;
+    border-radius: 3px;
+    margin:7px;
+    display:block;
+    content: '';
+    background-color: #ffffff;
+    transition: 0.4s ease;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+@keyframes t-laps-f {
+    0%{transform: translateY(0px) rotate(0deg)}
+    100%{transform: translateY(12px) rotate(-45deg)}
+}
+@keyframes m-laps-f {
+    0%{transform: scale(1)}
+    100%{transform: scale(0)}
+}
+@keyframes b-laps-f {
+    0%{transform: translateY(0px) rotate(0deg)}
+    100%{transform: translateY(-12px) rotate(45deg)}
+}
+@keyframes t-laps-b {
+    100%{transform: translateY(0px) rotate(0deg)}
+    0%{transform: translateY(12px) rotate(-45deg)}
+}
+@keyframes m-laps-b {
+    100%{transform: scale(1)}
+    0%{transform: scale(0)}
+}
+@keyframes b-laps-b {
+    100%{transform: translateY(0px) rotate(0deg)}
+    0%{transform: translateY(-12px) rotate(45deg)}
+}
+@keyframes down {
+    0%{transform:translateY(-100vh) scaleY(2.5)}
+    100%{transform:translateY(0vh) scaleY(1)}
+}
+@keyframes up {
+    100%{transform:translateY(-100vh) scaleY(2.5)}
+    0%{transform:translateY(0vh) scaleY(1)}
+}
+
+@media screen and (max-width:650px){
+    #logo{
+        width:100px
+    }
+    .niv li{
+        display:block;
+        clear:both;
+        padding:10px 20px;
+        text-align: center;
+    }
+    .hamburger{
+        display:block;
+    }
+    #menuItems{
+        display:none;
+        transition: 0.4s ease;
+        animation-duration: 0.5s;
+        animation-timing-function: ease;
+    }
+    
+}

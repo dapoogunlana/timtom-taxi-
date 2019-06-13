@@ -1,0 +1,224 @@
+
+.spacer{
+    height:120px;
+}
+.grid-container{
+    display:grid;
+    grid-template-columns: 140px auto;
+    min-height:100vh;
+}
+.sect h2{
+    text-align:center;
+}
+.sect>p{
+    text-align:center;
+}
+.contents{
+    width:90%;
+    margin: auto;
+    max-width: 700px;
+    animation: f-up 0.7s ease 1s 1 both;
+}
+@keyframes f-up {
+    0%{transform: translateY(50px) scale(0.9); opacity: 0;}
+    100%{transform: translateY(0px) scale(1); opacity: 1;}
+}
+.pickup{
+    width:100%;
+    border-radius: 10px 0;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3) ;
+    padding:1vh 10%;
+    margin:10px 0;
+    transition: 0.3s ease;
+}
+.pickup:hover{
+    transform: scale(1.03);
+    background-color: #cfdffd;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.5) ;
+}
+.pickup input{
+    padding:5px;
+    border-radius: 5px;
+    border:1px solid #999999;
+    transition: 0.3s;
+    width:100%;
+}
+.pickup input:focus{
+    outline: none;
+    animation:bubble 0.5s ease 1;
+}
+@keyframes bubble{
+    0%{transform: scale(1)}
+    50%{transform: scale(1.03)}
+    100%{transform: scale(1)}
+}
+.pickup label{
+    font-size: 12px;
+    font-weight: bold;
+}
+.pickbtn{
+    width:80%;
+    max-width: 200px;
+    margin:15px auto;
+}
+.pickbutton{
+    width:100%;
+    border-radius: 10px 0;
+    background-color: #3333aa;
+    color: #ffffff;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1) ;
+    padding:7px;
+    transition: 0.3s ease;
+    border:1px solid #3333aa;
+    font-weight: bold;
+}
+.pickbutton:hover{
+    transform: scale(1.03);
+    background-color: #ffffff;
+    color:#111166;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.4) ;
+}
+.paybutton{
+    width:100%;
+    border-radius: 10px;
+    background-color: #33aaa0;
+    color: #ffffff;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1) ;
+    padding:7px;
+    transition: 0.3s ease;
+    border:1px solid #33aaa0;
+    font-weight: bold;
+}
+.paybutton:hover{
+    transform: scale(1.03);
+    background-color: #ffffff;
+    color:#111166;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.4) ;
+}
+.pickbutton input:active{
+    outline: none;
+    animation:bubble 0.3s ease 1;
+}
+.payout{
+    width:94%;
+    max-width: 1000px;
+    margin:10px auto;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #e0edff;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);    
+    animation: f-up 0.7s ease 0.2s 1 both;
+}
+.mapouter{
+    border-radius: 8px 8px 0 0;
+    height: 0;
+    position:relative;
+    padding-top: 100%;
+    background-color: #f6fdff;
+}
+.mapc{
+    width:100%;
+    margin:10px 0 0 0;
+    position:relative;
+    box-shadow: 0px 2px 6px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.mapbody{
+    position: absolute;
+    display:block;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    transition: 0.5s ease;
+    border-radius: 8px;
+}
+
+
+@media screen and (max-width:850px){
+    .grid-container{
+        grid-template-columns: 70px auto;
+    }
+}
+
+@media screen and (max-width:600px){
+    .grid-container{
+        display:block;
+    }
+}
+input[type=text]{
+
+}
+.fm-imp::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.popup{
+    position:fixed;
+    top:calc(100px + 5vh);
+    left:15vw;
+    padding:calc(2vw + 5px);
+    background-color:#222277;
+    border-radius:40%;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    transition: 0.3s ease;
+    opacity: 0.4;
+    animation: downy 1s ease 1s 1 both;
+}
+.popup:hover{
+    transform: scale(1.05);
+    opacity: 1;
+}
+@keyframes downy{
+    0%{transform:translateY(-50vh)}
+    80%{transform:translateY(8vh)}
+    100%{transform:translateY(0vh)}
+}
+.fully{
+    position:fixed;
+    z-index: 600;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fade 0.4s ease 1 both;
+}
+@keyframes fade {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.c-message{
+    width:60%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding:4vh 5px;
+    animation: ninswap 1.2s ease 1 both;
+    border-radius: 20px;
+}
+.c-message>p{
+    text-align: center;
+    font-weight: bold;
+    color: #222277;
+    font-size: 18px;
+}
+@keyframes ninswap {
+    0%{transform: scale(-0.5, 0.4) translateY(20vh); opacity: 0;}
+    100%{transform: scale(1) translateY(0vh); opacity: 1;}
+}
+.c-image{
+    width:60%;
+    max-width: 180px;
+    margin:2vh auto;
+}
+.retrn{
+    position: relative;
+    margin: auto;
+    text-align: center;
+}

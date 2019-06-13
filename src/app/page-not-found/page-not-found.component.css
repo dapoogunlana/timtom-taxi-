@@ -1,0 +1,18 @@
+.spacer{
+    height:120px;
+}
+.page{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+.d90cr{
+    width:90%;
+    max-width: 500px;
+    margin:5vh auto;
+}
+.absn{
+    text-align: center;
+}

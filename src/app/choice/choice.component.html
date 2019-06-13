@@ -1,0 +1,24 @@
+<div class="grid-container">
+    <sidebar></sidebar>
+    <!--<div class="sect" *ngIf="data !='' ">-->
+    <div class="sect">
+        <div class="spacer"></div>
+        <h2 *ngIf="data != ''">Welcome {{ data.f_name }} !</h2>
+        <br><br>
+        <p>please select your desired service</p>
+        <div class="contentsk">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="attribute">
+                      <a routerLink="/transport"><img src="./../../assets/images/cash.jpg" width="100%" alt="Cash&and;Smile Courier"></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="attribute">
+                            <a routerLink="/rides"><img src="./../../assets/images/logobase.jpg" width="100%" alt="Timtom Taxi"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

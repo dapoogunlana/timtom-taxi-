@@ -1,0 +1,19 @@
+<div class="all">
+  <div class="spacer"></div>
+  <h3>Fill in your email address to reset your password</h3>
+  <div class="fm">
+    <div class="fm-in">
+        <form name="form" (ngSubmit)="f.form.valid && reset()" #f="ngForm">
+            <input type="email" class="form-control fm-imp" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Enter Email" required email>
+            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback" style="color:red;">
+              <div *ngIf="email.errors.required">Email is required</div>
+              <div *ngIf="email.errors.email">Email must be a valid email address</div>
+            </div>
+            <input class="reg" type="submit" id="reset" [value]="reseter">
+          </form>
+          <div *ngIf="failed"><p style="color:red">Invalid email address</p></div> 
+         <div *ngIf="passed" class="pop"><p> Your password has been sent to your email <a routerLink="/login">go&nbsp;back</a></p></div>
+          <!-- <div *ngIf="failed == true" class="pop"><p> Network error, please try again</p></div>-->
+    </div>
+  </div>
+</div>
